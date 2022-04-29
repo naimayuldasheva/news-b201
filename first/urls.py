@@ -15,13 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from news.views import news_views
+from news.views import news_views, show_category, news_detail
 
 from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', news_views),
+    path('', news_views, name="homepage"),
+    path('category/<int:category_id>/', show_category, name="show_category"),
+    path('detail/<int:id>', news_detail, name='news_detail')
 ]
 urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

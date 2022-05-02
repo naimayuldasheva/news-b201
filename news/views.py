@@ -9,7 +9,7 @@ def news_views(request):
         'news_all':news_all,
         'category_all':category_all,
     }
-    return render(request, 'news/news_list.html', context)
+    return render(request, 'index.html', context)
 
 
 

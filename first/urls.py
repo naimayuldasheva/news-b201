@@ -23,7 +23,7 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', news_views, name="homepage"),
-    path('category/<int:category_id>/', show_category, name="show_category"),
+    path('category/', show_category, name="show_category"),
     path('detail/<int:id>', news_detail, name='news_detail')
 ]
 urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

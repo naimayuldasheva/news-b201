@@ -15,8 +15,11 @@ def news_views(request):
 
 def show_category(request):
     category_all = Category.objects.all()
+    news_all = News.objects.all()
     context = {
         'category_all':category_all,
+        'news_all':news_all,
+
     }
     return render(request, 'include/category.html', context)
 

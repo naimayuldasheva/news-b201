@@ -4,6 +4,7 @@ from django.urls import reverse
 
 class Category(models.Model):
     name = models.CharField(max_length=140)
+    image = models.ImageField(blank=True, null=True)
     url = models.SlugField(null=True, unique=True)
 
     def __str__(self):
@@ -30,3 +31,10 @@ class News(models.Model):
 
     class Meta:
         verbose_name_plural = "Новости"
+
+
+class SocialSidebar(models.Model):
+    link_address = models.CharField(
+        max_length=255, help_text="ссылка на ресурс, например ссылка на инстаграм: https://www.instagram.com/mbcstudio_org/"
+    )
+    

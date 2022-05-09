@@ -17,7 +17,8 @@ class Category(models.Model):
 
     class Meta:
         verbose_name_plural = "Категории"
-
+        ordering = ['-id']
+        
 
 class News(models.Model):
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
@@ -31,6 +32,7 @@ class News(models.Model):
 
     class Meta:
         verbose_name_plural = "Новости"
+        ordering = ['-id']
 
 
 class SocialSidebar(models.Model):

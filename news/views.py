@@ -27,3 +27,13 @@ def show_category(request):
 def news_detail(request, id):
     news = get_object_or_404(News, id=id)
     return render(request, 'news/news_detail.html', {'news': news})
+
+
+def category_news(request, id):
+    category_all = Category.objects.all()
+    news_all = News.objects.filter(category_id = id)
+    context = {
+        'category_all':category_all,
+        'news_all':news_all,
+    }
+    return render(request, 'include/category.html', context)

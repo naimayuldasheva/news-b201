@@ -6,7 +6,7 @@
             <div class="position-relative mb-3">
                 <img class="img-fluid w-100" src="{{category.image.url}}" style="object-fit: cover;">
                 <div class="overlay position-relative bg-light">
-                    <a class="h4" href="">
+                    <a class="h4" href="{% url 'category_news' category.id %}">
                         {{category.name}}
                     </a>
                 </div>

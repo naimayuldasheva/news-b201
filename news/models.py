@@ -35,6 +35,7 @@ class News(models.Model):
 
 class SocialSidebar(models.Model):
     link_address = models.CharField(
-        max_length=255, help_text="ссылка на ресурс, например ссылка на инстаграм: https://www.instagram.com/mbcstudio_org/"
+        max_length=255,
+        help_text="ссылка на ресурс, например ссылка на инстаграм: https://www.instagram.com/mbcstudio_org/"
     )
     

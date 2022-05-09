@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from news.views import news_views, show_category, news_detail
+from news.views import news_views, show_category, news_detail, category_news
 
 from django.conf.urls.static import static
 from django.conf import settings
@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', news_views, name="homepage"),
     path('category/', show_category, name="show_category"),
+    path('category/<int:id>', category_news, name='category_news'),
     path('detail/<int:id>', news_detail, name='news_detail')
 ]
 urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
